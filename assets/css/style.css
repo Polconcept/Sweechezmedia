@@ -14987,4 +14987,28 @@ img[src$="subtitle-star.svg"] {
 .feature-item:hover .box-title a {
     color: var(--theme-color) !important; /* light blue */
 }
+/* Header logo: increase visual size without changing header height */
+.header-logo a img {
+    transform: scale(4.25) !important; /* was ~3.8; bump slightly */
+    transform-origin: left center !important;
+}
+/* Mobile logo: bump slightly, keep layout stable */
+.th-menu-wrapper .mobile-logo img {
+    max-width: 170px !important; /* was ~150px */
+    height: auto !important;
+}
 /*# sourceMappingURL=style.css.map */
+/* Mobile: nudge About arrow slightly left without resizing */
+@media (max-width: 575px) {
+  .img-box2 .img1 .arrow-fill { transform: translateX(-42px); }
+}
+/* Mobile: equalize header spacing left/right so logo and toggle are balanced */
+@media (max-width: 991px) {
+  /* Equal side padding for header container */
+  .th-header .th-container { padding-left: 24px !important; padding-right: 24px !important; }
+  .th-header .menu-area .row { margin-left: 0 !important; margin-right: 0 !important; }
+  .th-header .header-logo { margin-left: 0 !important; }
+  .th-header .th-menu-toggle { margin-right: 0 !important; }
+  /* Nudge logo slightly left to visually balance with toggle */
+  .th-header .header-logo a img { transform: translateX(-6px) scale(4.25) !important; transform-origin: left center !important; }
+}
