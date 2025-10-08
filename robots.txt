@@ -2,6 +2,6 @@ User-agent: *
 Allow: /
 
 # Point crawlers to the sitemap
-Sitemap: https://polconcept.github.io/Sweechezmedia/sitemap.xml
+Sitemap: https://www.sweechezmedia.com/sitemap.xml
 
 
