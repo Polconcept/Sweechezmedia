@@ -22,6 +22,97 @@ html {
 html, body {
     scroll-behavior: smooth;
 }
+
+/* ==============================
+   Sweechez Media Theme Overrides
+   Palette: Purple, Black, Light Blue
+   ============================== */
+:root {
+    /* Primary (Purple) and Accent (Light Blue) */
+    --theme-color: #6D28D9; /* Purple */
+    --theme-color2: #38BDF8; /* Light Blue */
+}
+
+body.dark-theme {
+    background: #000000; /* Solid black background */
+}
+
+/* Buttons */
+.th-btn {
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+    color: #ffffff;
+}
+.th-btn:hover,
+.th-btn:focus {
+    background-color: var(--theme-color2);
+    border-color: var(--theme-color2);
+    color: #0B0F14; /* readable on light blue */
+}
+
+/* Link accents */
+a {
+    color: var(--theme-color);
+}
+a:hover {
+    color: var(--theme-color2);
+}
+
+/* Bordered social icons hover to match palette */
+.th-social.style-border a:hover {
+    border-color: var(--theme-color);
+    background-color: var(--theme-color);
+    color: #ffffff;
+}
+
+/* Subtitle star accent alignment with palette elements */
+.sub-title img {
+    filter: hue-rotate(280deg) saturate(120%);
+}
+
+/* Ensure overrides take precedence by repeating at file end */
+:root {
+    /* Primary (Purple) and Accent (Light Blue) */
+    --theme-color: #6D28D9; /* Purple */
+    --theme-color2: #38BDF8; /* Light Blue */
+}
+
+body.dark-theme {
+    background: #000000; /* Solid black background */
+}
+
+/* Buttons */
+.th-btn {
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+    color: #ffffff;
+}
+.th-btn:hover,
+.th-btn:focus {
+    background-color: var(--theme-color2);
+    border-color: var(--theme-color2);
+    color: #0B0F14; /* readable on light blue */
+}
+
+/* Link accents */
+a {
+    color: var(--theme-color);
+}
+a:hover {
+    color: var(--theme-color2);
+}
+
+/* Bordered social icons hover to match palette */
+.th-social.style-border a:hover {
+    border-color: var(--theme-color);
+    background-color: var(--theme-color);
+    color: #ffffff;
+}
+
+/* Subtitle star accent alignment with palette elements */
+.sub-title img {
+    filter: hue-rotate(280deg) saturate(120%);
+}
 /*=================================
     CSS Index Here
 ==================================*/
@@ -787,7 +878,6 @@ input[type="checkbox"] ~ label {
   cursor: pointer;
   display: block;
 }
-
 input[type="checkbox"] ~ label:before {
   content: "";
   font-family: var(--icon-font);
@@ -1180,6 +1270,12 @@ textarea.is-invalid {
 
 .th-menu-wrapper .mobile-logo svg {
   max-width: 185px;
+}
+
+/* Shrink mobile menu logo image size */
+.th-menu-wrapper .mobile-logo img {
+  max-width: 150px;
+  height: auto;
 }
 
 .th-menu-wrapper .th-menu-toggle {
@@ -1579,7 +1675,6 @@ textarea.is-invalid {
 .th-btn.style2:hover {
   color: var(--white-color);
 }
-
 .th-btn.style2:hover:before, .th-btn.style2:hover:after {
   background-color: var(--title-color);
 }
@@ -2380,7 +2475,6 @@ hr.title-line {
 .th-social.style2 {
   gap: 20px;
 }
-
 .th-social.style2 a {
   width: auto;
   height: auto;
@@ -3175,7 +3269,6 @@ a.text-theme:hover,
 .rollinright.th-animated {
   --animation-name: rollinright;
 }
-
 .titleAnimation,
 .scalein,
 .slidetopleft,
@@ -3975,7 +4068,6 @@ a.text-theme:hover,
   font-family: var(--title-font);
   margin-bottom: -0.3em;
 }
-
 .price_slider_wrapper {
   margin-top: -0.5em;
 }
@@ -4726,6 +4818,17 @@ a.text-theme:hover,
   padding-bottom: 15px;
 }
 
+/* Shrink header logo image size */
+.header-logo a img {
+  max-height: 34px; /* logical box height (keeps header height unchanged) */
+  height: auto;
+  width: auto;
+  -webkit-transform: scale(3.8);
+          transform: scale(3.8); /* slightly larger than before */
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+
 .header-links > ul {
   margin: 0;
   padding: 0;
@@ -4773,7 +4876,6 @@ a.text-theme:hover,
 .header-links a {
   color: var(--body-color);
 }
-
 .header-links a:hover {
   color: var(--theme-color);
 }
@@ -5570,7 +5672,6 @@ a.text-theme:hover,
   border-bottom: 1px solid var(--theme-color);
   color: var(--body-color);
 }
-
 .newsletter-widget .th-btn {
   position: absolute;
   min-width: auto;
@@ -6360,7 +6461,6 @@ blockquote.has-very-dark-gray-color {
     --icon-size: 80px;
   }
 }
-
 /* Extra small devices */
 @media (max-width: 575px) {
   blockquote,
@@ -7160,7 +7260,6 @@ ul.comment-list .th-comment-item:last-child > .th-post-comment {
     margin-bottom: -0.55em;
   }
 }
-
 @media (max-width: 330px) {
   .hero-style1 .hero-title img {
     display: none;
@@ -7228,7 +7327,7 @@ ul.comment-list .th-comment-item:last-child > .th-post-comment {
 .hero-style2 {
   position: relative;
   z-index: 6;
-  padding: calc(110px + 148px) 0 16px 0;
+  padding: calc(110px + 120px) 0 16px 0; /* moved slightly closer to header */
   text-align: center;
 }
 
@@ -7300,7 +7399,7 @@ ul.comment-list .th-comment-item:last-child > .th-post-comment {
 /* Medium devices */
 @media (max-width: 991px) {
   .hero-style2 {
-    padding: calc(110px + 58px) 0 36px 0;
+    padding: calc(110px + 44px) 0 36px 0; /* proportional adjustment on mobile */
   }
   .hero-1 .hero-thumb {
     display: none;
@@ -7960,7 +8059,6 @@ table.variations .label,
 .woocommerce-grouped-product-list-item .label {
   border: none;
 }
-
 table.variations__label,
 .woocommerce-grouped-product-list-item__label {
   border: none !important;
@@ -8760,7 +8858,6 @@ table.woocommerce-product-attributes {
           align-content: center;
   height: 100%;
 }
-
 .product-thumb-tab .tab-btn {
   background-color: var(--white-color);
   cursor: pointer;
@@ -9559,7 +9656,6 @@ table.woocommerce-product-attributes {
   width: calc(100% - 200px);
   margin-right: 10px;
 }
-
 .cart_table .th-cart-coupon .th-btn {
   font-size: 16px;
   padding: 20px 25px;
@@ -10357,7 +10453,6 @@ span.select2-selection.select2-selection--single:focus {
   margin-bottom: -0.5em;
   font-family: var(--body-font);
 }
-
 .contact-info_text span,
 .contact-info_text a {
   display: block;
@@ -11156,7 +11251,6 @@ span.select2-selection.select2-selection--single:focus {
 .team-details-info-wrap ul li span {
   margin-right: 36px;
 }
-
 .team-details-info-wrap ul li .tag_cloud {
   height: 28px;
   border-radius: 15px;
@@ -11952,7 +12046,6 @@ span.select2-selection.select2-selection--single:focus {
   /* Extra large devices */
   /* Medium Large devices */
 }
-
 @media (max-width: 1500px) {
   .brand-sec1:after {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 11px, calc(100% - 40px) 50%, 100% calc(100% - 11px), 100% 100%, 0 100%, 0 calc(100% - 11px), 40px 50%, 0 11px);
@@ -12753,11 +12846,6 @@ span.select2-selection.select2-selection--single:focus {
   padding: 50px;
   gap: 30px;
 }
-
-.service-wrap.style2 .service-wrap_content {
-  margin-bottom: -0.4em;
-}
-
 .service-wrap.style2 .service-wrap_icon {
   -webkit-box-flex: 0;
   -webkit-flex: none;
@@ -13554,7 +13642,6 @@ span.select2-selection.select2-selection--single:focus {
 .project-card3:hover .project-card_subtitle {
   color: var(--theme-color);
 }
-
 .project-card3:hover .project-img:after {
   opacity: 0.8;
 }
@@ -14353,7 +14440,6 @@ span.select2-selection.select2-selection--single:focus {
 .pt-50 {
   padding-top: 50px;
 }
-
 /*-- Padding Bottom --*/
 .pb-5 {
   padding-bottom: 5px;
@@ -14865,4 +14951,40 @@ span.select2-selection.select2-selection--single:focus {
 ==================================*/
 /*------------------- 6.01. Update 1 -------------------*/
 
+/* Final override: switch template green to light blue */
+:root { --theme-color: #38BDF8; }
+
+/* Make the star icons purple (subtitle + scrolling services) */
+.sub-title img,
+.feature-item .feature_icon img {
+    filter: invert(16%) sepia(93%) saturate(7482%) hue-rotate(271deg) brightness(87%) contrast(128%) !important;
+}
+/* Force purple on specific star SVG assets */
+img[src$="/normal/feature-star.svg"],
+img[src$="feature-star.svg"],
+img[src$="/normal/subtitle-star.svg"],
+img[src$="subtitle-star.svg"] {
+    filter: invert(16%) sepia(93%) saturate(7482%) hue-rotate(271deg) brightness(87%) contrast(128%) !important;
+}
+
+/* What We Offer service icons to purple */
+.service-wrap_icon img {
+    filter: invert(16%) sepia(93%) saturate(7482%) hue-rotate(271deg) brightness(87%) contrast(128%) !important;
+}
+
+/* Header CTA button hover -> purple */
+.header-button .th-btn:hover,
+.header-button .th-btn:focus {
+    background-color: #6D28D9 !important; /* purple */
+    border-color: #6D28D9 !important;
+    color: #ffffff !important;
+}
+
+/* Scrolling services: set hover color to light blue */
+.feature-item .box-title a {
+    transition: color .25s ease;
+}
+.feature-item:hover .box-title a {
+    color: var(--theme-color) !important; /* light blue */
+}
 /*# sourceMappingURL=style.css.map */
