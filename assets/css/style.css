@@ -14980,6 +14980,14 @@ img[src$="subtitle-star.svg"] {
     color: #ffffff !important;
 }
 
+/* Contact form submit button hover -> purple to match header */
+.th-contact-form .th-btn:hover,
+.th-contact-form .th-btn:focus {
+    background-color: #6D28D9 !important;
+    border-color: #6D28D9 !important;
+    color: #ffffff !important;
+}
+
 /* Scrolling services: set hover color to light blue */
 .feature-item .box-title a {
     transition: color .25s ease;

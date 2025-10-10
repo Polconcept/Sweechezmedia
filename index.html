@@ -80,7 +80,7 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -104,14 +104,14 @@
                                 <ul>
                                     <li><a href="/">Home</a></li>
                                     <li><a href="#about">About</a></li>
-                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="#contact">Contact</a></li>
                                 </ul>
                             </nav>
                             <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <div class="header-button">
-                                <a href="/contact" class="th-btn">Let's Talk<i class="fa-solid fa-arrow-up-right ms-2"></i></a>
+                                <a href="#contact" class="th-btn">Let's Talk<i class="fa-solid fa-arrow-up-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -365,7 +365,7 @@ Process Area
     <!--==============================
     Faq Area  
 ==============================-->
-    <div class="overflow-hidden space-bottom">
+    <div class="overflow-hidden space-bottom" style="padding-bottom: 70px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -410,6 +410,58 @@ Process Area
                         </div>
                     </div>
                 </div>
+
+    <!--==============================
+    Contact Area  
+==============================-->
+    <div class="space" id="contact" style="padding-top: 70px;">
+        <div class="container">
+            <div class="title-area text-center mb-40">
+                <span class="sub-title wow fadeInUp"><img src="assets/img/normal/subtitle-star.svg" alt="img"> Contact Us</span>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 pe-xxl-5 mb-30 mb-lg-0">
+                    <h2 class="sec-title mb-25 text-lg-start text-center">Get in touch with <br> Us today</h2>
+                    <a href="mailto:sweechezmedia@gmail.com" class="contact-mail mb-25">sweechezmedia@gmail.com</a>
+                    <a href="tel:+13074541281" class="contact-number mb-15">+1 (307) 454-1281</a>
+                    <a href="tel:+2349121807613" class="contact-number mb-30">+234 912 180 7613</a>
+                </div>
+                <div class="col-lg-6 ps-xl-4">
+                    <form id="contact-form" action="https://formsubmit.co/sweechezmedia@gmail.com" method="POST" class="th-contact-form" data-bg-src="assets/img/bg/feature-bg1.png">
+                        <input type="hidden" name="_subject" value="New contact from Sweechez Media website">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" id="formsubmit-next" name="_next" value="https://sweechez.vercel.app/?submitted=true#contact">
+                        <div class="row">
+                            <div class="col-xl-6 form-group">
+                                <input type="text" name="name" placeholder="Full Name" class="form-control style2" required>
+                            </div>
+                            <div class="col-xl-6 form-group">
+                                <input type="email" name="email" placeholder="Email Address" class="form-control style2" required>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="text" name="subject" placeholder="Subject" class="form-control style2" required>
+                            </div>
+                            <div class="col-12 form-group">
+                                <textarea name="message" placeholder="Message" class="form-control style2" rows="4" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div id="contact-success" class="alert alert-success" role="alert" style="display:none; margin-bottom: 15px;">
+                                    Submission sent successfully.
+                                </div>
+                                <div id="contact-error" class="alert alert-danger" role="alert" style="display:none; margin-bottom: 15px;">
+                                    Something went wrong. Please try again.
+                                </div>
+                            </div>
+                            <div class="col-12 form-group mb-0">
+                                <button class="th-btn" type="submit">Send Message <i class="fas fa-arrow-right ms-2"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!--==============================
@@ -516,6 +568,26 @@ Blog Area
                     }
                 });
             });
+
+            // Ensure FormSubmit redirect uses absolute URL
+            const nextField = document.getElementById('formsubmit-next');
+            if (nextField) {
+                nextField.value = window.location.origin + '/?submitted=true#contact';
+            }
+
+            // Show success alert only when redirected back with submitted=true
+            const success = document.getElementById('contact-success');
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('submitted') === 'true' && success) {
+                success.style.display = 'block';
+            }
+            // Force hash scroll to contact on success param
+            if (urlParams.get('submitted') === 'true') {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
         });
     </script>
 
