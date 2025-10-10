@@ -1,0 +1,16 @@
+/* Custom overrides: center NEWS dropdown and prevent left shift */
+.header-layout1 .main-menu ul.sub-menu {
+  text-align: center !important;
+  left: 50% !important;
+  transform: translateX(-50%) scaleY(0) !important;
+  padding: 12px 20px !important;
+}
+.header-layout1 .main-menu ul li:hover > ul.sub-menu {
+  transform: translateX(-50%) scaleY(1) !important;
+}
+.header-layout1 .main-menu ul.sub-menu li a {
+  padding-left: 0 !important;
+}
+.header-layout1 .main-menu ul.sub-menu li a:before {
+  display: none !important;
+}
