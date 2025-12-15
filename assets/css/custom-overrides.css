@@ -14,3 +14,29 @@
 .header-layout1 .main-menu ul.sub-menu li a:before {
   display: none !important;
 }
+
+.header-layout2 .header-button .th-btn {
+  background-color: #7B61FF !important;
+  border-color: #7B61FF !important;
+  color: #ffffff !important;
+}
+.header-layout2 .header-button .th-btn:hover,
+.header-layout2 .header-button .th-btn:focus {
+  background-color: #7B61FF !important;
+  border-color: #7B61FF !important;
+  color: #ffffff !important;
+}
+
+/* Ensure site-wide theme color is purple */
+:root {
+  --theme-color: #7B61FF !important;
+}
+
+/* Fix hover effects that use ::before/::after overlays */
+.header-layout2 .header-button .th-btn::before,
+.header-layout2 .header-button .th-btn::after {
+  background-color: #7B61FF !important;
+}
+.header-layout2 .header-button .th-btn i {
+  color: #ffffff !important;
+}
